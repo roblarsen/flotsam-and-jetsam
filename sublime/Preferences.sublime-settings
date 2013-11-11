@@ -1,11 +1,11 @@
-{{
+{
 	"copy_with_empty_selection": false,
 	"font_face": "Consolas",
 	"font_size": 16,
 	"spell_check": true,
-    "tab_size": 2,
+  "tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"word_wrap": true,
-    "wrap_width": 80,
-    "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS",".accurev","_notes"]
+  "wrap_width": 80,
+  "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS",".accurev","_notes"]
 }
