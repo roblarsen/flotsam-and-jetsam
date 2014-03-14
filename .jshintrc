@@ -1,0 +1,21 @@
+{
+    passfail:false,
+    maxerr: 100,
+    browser: true,
+    jquery: true,
+    predef: [
+      "angular"
+    ],
+    devel: true,
+    bitwise: true,
+    boss:false,
+    trailing:true,
+    sub:true,
+    curly:true,
+    eqeqeq:true,
+    forin:true,
+    freeze:true,
+    indent:2,
+    quotmark:"double",
+    unused:true
+}
