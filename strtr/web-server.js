@@ -6,7 +6,7 @@ var util = require('util'),
     url = require('url'),
     events = require('events');
 
-var DEFAULT_PORT = 8000;
+var DEFAULT_PORT = 8080;
 
 function main(argv) {
   new HttpServer({
@@ -87,7 +87,7 @@ StaticServlet.MimeMap = {
 
 StaticServlet.prototype.handleRequest = function(req, res) {
   var self = this;
-  var path = ('./' + req.url.pathname).replace('//','/').replace(/%(..)/g, function(match, hex){
+  var path = ('./pub/' + req.url.pathname).replace('//','/').replace(/%(..)/g, function(match, hex){
     return String.fromCharCode(parseInt(hex, 16));
   });
   var parts = path.split('/');
