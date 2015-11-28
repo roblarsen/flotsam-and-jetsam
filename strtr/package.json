@@ -17,7 +17,8 @@
     "grunt-mkdir": "~0.1.1",
     "grunt-sync": "0.0.7",
     "grunt-cssnext": "~1.0.0",
-    "grunt-babel": "~6.0.0"
+    "grunt-babel": "~6.0.0",
+    "jit-grunt": "^0.9.1"
   },
   "dependencies": {
     "grunt": "~0.4.5"

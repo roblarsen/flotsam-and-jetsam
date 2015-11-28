@@ -1,15 +1,7 @@
 module.exports = function (grunt) {
+  require("jit-grunt")(grunt);
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
-    concat: {
-      options: {
-        separator: ";"
-      },
-      js: {
-        src: ["src/js/_assets/vendor/jquery.min.js","src/js/main.js"],
-        dest: "pub/_assets/js/script.js"
-      }
-    },
     cssnext: {
       options: {
         sourcemap: true
@@ -29,20 +21,32 @@ module.exports = function (grunt) {
     sync: {
       target: {
         files: [
-          { expand: true, cwd:"src/", src: ["*.html", "*.ico", "src/_assets/img/**/*"], dest: "pub/", filter: "isFile" }
+          { expand: true, cwd:"src/", src: ["*.html", "*.ico", "_assets/img/**/*"], dest: "pub/", filter: "isFile" }
         ]
       }
     },
     uglify: {
       js: {
         files: {
-          "pub/_assets/js/script.js": ["pub/_assets/js/script.js"]
+          "pub/_assets/js/script.js": ["src/_assets/js/vendor/jquery.min.js","src/_assets/js/plugins.js","src/_assets/js/main.js"]
         }
       }
     },
     watch: {
-      files: ["src/_assets/js/*","src/index.html","src/_assets/css/*","gruntfile.js"],
-      tasks: ["jshint", "sync" ,"concat", "cssnext", "cssmin", "uglify"]
+      files: ["src/_assets/js/*","src/*.html","src/_assets/css/*","gruntfile.js"],
+      tasks: ["jshint", "sync" ,"cssnext", "cssmin", "uglify"],
+      options :{
+        livereload:true
+      }
+    },
+    connect: {
+      server: {
+        options: {
+          base: "pub/",
+          open:true,
+          livereload:true
+        }
+      }
     },
     jshint: {
       files: ["gruntfile.js", "src/_assets/js/main.js"],
@@ -66,17 +70,6 @@ module.exports = function (grunt) {
       }
     }
   });
-  grunt.loadNpmTasks("grunt-mkdir");
-  grunt.loadNpmTasks("grunt-sync");
-  grunt.loadNpmTasks("grunt-contrib-jshint");
-  grunt.loadNpmTasks("grunt-contrib-concat");
-  grunt.loadNpmTasks("grunt-contrib-uglify");
-  grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks("grunt-contrib-cssmin");
-  grunt.loadNpmTasks("grunt-contrib-copy");
-  grunt.loadNpmTasks("grunt-contrib-imagemin");
-  grunt.loadNpmTasks("grunt-hashres");
-  grunt.loadNpmTasks("grunt-replace");
-  grunt.loadNpmTasks("grunt-cssnext");
-  grunt.registerTask("default", [ "jshint", "sync" , "cssnext", "cssmin", "uglify"]);
+
+  grunt.registerTask("dev", [ "jshint", "sync" , "cssnext", "cssmin", "uglify","connect","watch"]);
 };
