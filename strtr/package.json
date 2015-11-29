@@ -18,6 +18,7 @@
     "grunt-sync": "0.0.7",
     "grunt-cssnext": "~1.0.0",
     "grunt-babel": "~6.0.0",
+    "grunt-contrib-connect": "~0.11.2",
     "jit-grunt": "^0.9.1"
   },
   "dependencies": {
