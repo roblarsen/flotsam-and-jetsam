@@ -1,0 +1,21 @@
+{
+  "name": "app-name",
+  "version": "0.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "Pap Tamas",
+  "license": "MIT",
+  
+  "devDependencies": {
+	  "grunt": "~0.4.1",   
+	  "grunt-contrib-concat": "~0.3.0",
+	  "grunt-contrib-uglify": "~0.2.7",
+      "grunt-contrib-less": "~0.8.2",
+	  "grunt-contrib-copy": "~0.4.1",
+      "grunt-contrib-jshint": "~0.7.1",
+      "grunt-contrib-watch": "~0.5.3"
+  }
+}

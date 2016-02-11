@@ -1,0 +1,28 @@
+{
+  "name": "app-name",
+  "version": "0.0.0",
+  "authors": [
+    "https://github.com/paptamas"
+  ],
+  "main": "./js/app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.0",
+    "angular-animate": "1.2.0",    
+    "angular-cookies": "1.2.0",
+    "angular-loader": "1.2.0",
+    "angular-resource": "1.2.0",
+    "angular-route": "1.2.0",
+    "angular-sanitize": "1.2.0",
+    "angular-touch": "1.2.0",
+    "bootstrap3-less": "*",
+	"angular-bootstrap3": "*"
+  }
+}
