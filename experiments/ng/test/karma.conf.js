@@ -21,18 +21,15 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      // bower:js
-      'bower_components/jquery/dist/jquery.js',
-      'bower_components/angular/angular.js',
-      'bower_components/bootstrap/dist/js/bootstrap.js',
-      'bower_components/angular-animate/angular-animate.js',
-      'bower_components/angular-cookies/angular-cookies.js',
-      'bower_components/angular-resource/angular-resource.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-sanitize/angular-sanitize.js',
-      'bower_components/angular-touch/angular-touch.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      // endbower
+      "app/scripts/vendor/jquery/jquery.min.js",
+      "app/scripts/vendor/angular/angular.min.js",
+      "app/scripts/vendor/bootstrap/bootstrap.min.js",
+      "app/scripts/vendor/angular-animate/angular-animate.min.js",
+      "app/scripts/vendor/angular-cookies/angular-cookies.min.js",
+      "app/scripts/vendor/angular-resource/angular-resource.min.js",
+      "app/scripts/vendor/angular-route/angular-route.min.js",
+      "app/scripts/vendor/angular-sanitize/angular-sanitize.min.js",
+      "app/scripts/vendor/angular-touch/angular-touch.min.js",
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
       "test/spec/**/*.js"
