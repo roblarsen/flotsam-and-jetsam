@@ -23,6 +23,7 @@ module.exports = function(config) {
     files: [
       "app/scripts/vendor/jquery/jquery.min.js",
       "app/scripts/vendor/angular/angular.min.js",
+      "app/scripts/vendor/angular-mocks/angular-mocks.js",
       "app/scripts/vendor/bootstrap/bootstrap.min.js",
       "app/scripts/vendor/angular-animate/angular-animate.min.js",
       "app/scripts/vendor/angular-cookies/angular-cookies.min.js",
@@ -30,7 +31,8 @@ module.exports = function(config) {
       "app/scripts/vendor/angular-route/angular-route.min.js",
       "app/scripts/vendor/angular-sanitize/angular-sanitize.min.js",
       "app/scripts/vendor/angular-touch/angular-touch.min.js",
-      "app/scripts/**/*.js",
+      "app/scripts/app.js",
+      "app/scripts/controllers/**/*.js",
       "test/mock/**/*.js",
       "test/spec/**/*.js"
     ],

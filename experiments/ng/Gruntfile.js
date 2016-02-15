@@ -8,21 +8,36 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
-
+  var path = require('path');
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
-    ngtemplates: 'grunt-angular-templates',
-    cdnify: 'grunt-google-cdn'
+    ngtemplates: 'grunt-angular-templates'
   });
 
   // Configurable paths for the application
   var appConfig = {
     app: 'app',
     dist: 'dist'
+  };
+  var lessCreateConfig = function (context, block) {
+    var cfg = {files: []},
+        outfile = path.join(context.outDir, block.dest),
+        filesDef = {};
+     
+    filesDef.dest = outfile;
+    filesDef.src = [];
+         
+    context.inFiles.forEach(function (inFile) {
+        filesDef.src.push(path.join(context.inDir, inFile));
+    });
+         
+    cfg.files.push(filesDef);
+    context.outFiles = [block.dest];
+    return cfg;
   };
 
   // Define the configuration for all the tasks
@@ -78,6 +93,10 @@ module.exports = function (grunt) {
                 '/app/styles',
                 connect.static('./app/styles')
               ),
+              connect().use(
+                '/app/scripts',
+                connect.static('./app/scripts')
+              ),
               connect.static(appConfig.app)
             ];
           }
@@ -90,10 +109,6 @@ module.exports = function (grunt) {
             return [
               connect.static('.tmp'),
               connect.static('test'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
               connect.static(appConfig.app)
             ];
           }
@@ -205,11 +220,21 @@ module.exports = function (grunt) {
       html: 'app/index.html',
       options: {
         dest: 'dist',
+        blockReplacements: {
+          less: function (block) {
+              return '<link rel="stylesheet" href="' + block.dest + '" />';
+          }
+        },
         flow: {
           html: {
             steps: {
               js: ['concat', 'uglifyjs'],
-              css: ['cssmin']
+              less: ['concat',{
+                    name: 'less',
+                    createConfig: lessCreateConfig
+              }],
+              css: ['concat','cssmin'],
+              
             },
             post: {}
           }
@@ -325,13 +350,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Replace Google CDN references
-    cdnify: {
-      dist: {
-        html: ['dist/*.html']
-      }
-    },
-
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -344,17 +362,13 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '*.html',
             'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+            'fonts/{,*/}*.*'
           ]
         }, {
           expand: true,
           cwd: '.tmp/images',
           dest: 'dist/images',
           src: ['generated/*']
-        }, {
-          expand: true,
-          cwd: 'app/fonts/*',
-          dest: 'dist'
         }]
       },
       styles: {
@@ -426,14 +440,12 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'cdnify',
     'cssmin',
     'uglify',
     'filerev',
     'usemin',
     'htmlmin'
   ]);
-
   grunt.registerTask('default', [
     'newer:jshint',
     'newer:jscs',
