@@ -24,10 +24,7 @@ module.exports = function (grunt) {
     watch: {
       js: {
         files: ['app/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all', 'newer:jscs:all'],
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        }
+        tasks: ['newer:jshint:all', 'newer:jscs:all']
       },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
@@ -39,16 +36,6 @@ module.exports = function (grunt) {
       },
       gruntfile: {
         files: ['Gruntfile.js']
-      },
-      livereload: {
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        },
-        files: [
-          'app/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
-          'app/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-        ]
       }
     },
     // The actual grunt server settings
@@ -56,27 +43,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
-        livereload: 35729
-      },
-      livereload: {
-        options: {
-          open: true,
-          middleware: function (connect) {
-            return [
-              connect.static('.tmp'),
-              connect().use(
-                '/app/styles',
-                connect.static('./app/styles')
-              ),
-              connect().use(
-                '/app/scripts',
-                connect.static('./app/scripts')
-              ),
-              connect.static(appConfig.app)
-            ];
-          }
-        }
+        hostname: 'localhost'
       },
       test: {
         options: {
@@ -378,14 +345,8 @@ module.exports = function (grunt) {
       'clean:server',
       'concurrent:server',
       'postcss:server',
-      'connect:livereload',
       'watch'
     ]);
-  });
-
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve:' + target]);
   });
 
   grunt.registerTask('test', [
