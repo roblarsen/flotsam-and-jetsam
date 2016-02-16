@@ -18,29 +18,6 @@ module.exports = function (grunt) {
     ngtemplates: 'grunt-angular-templates'
   });
 
-  // Configurable paths for the application
-  var appConfig = {
-    app: 'app',
-    dist: 'dist'
-  };
-  var lessCreateConfig = function (context, block) {
-    var cfg = {files: []},
-        outfile = path.join(context.outDir, block.dest),
-        filesDef = {};
-     
-    filesDef.dest = outfile;
-    filesDef.src = [];
-         
-    context.inFiles.forEach(function (inFile) {
-        filesDef.src.push(path.join(context.inDir, inFile));
-    });
-         
-    cfg.files.push(filesDef);
-    context.outFiles = [block.dest];
-    return cfg;
-  };
-
-  // Define the configuration for all the tasks
   grunt.initConfig({
 
     // Watches files for changes and runs tasks based on the changed files
@@ -74,7 +51,6 @@ module.exports = function (grunt) {
         ]
       }
     },
-
     // The actual grunt server settings
     connect: {
       options: {
@@ -173,7 +149,6 @@ module.exports = function (grunt) {
       },
       server: '.tmp'
     },
-
     // Add vendor prefixed styles
     postcss: {
       options: {
@@ -220,21 +195,11 @@ module.exports = function (grunt) {
       html: 'app/index.html',
       options: {
         dest: 'dist',
-        blockReplacements: {
-          less: function (block) {
-              return '<link rel="stylesheet" href="' + block.dest + '" />';
-          }
-        },
         flow: {
           html: {
             steps: {
               js: ['concat', 'uglifyjs'],
-              less: ['concat',{
-                    name: 'less',
-                    createConfig: lessCreateConfig
-              }],
-              css: ['concat','cssmin'],
-              
+              css: ['concat','cssmin']              
             },
             post: {}
           }
@@ -263,15 +228,15 @@ module.exports = function (grunt) {
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
     // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       'dist/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
+    cssmin: {
+      dist: {
+        files: {
+          'dist/styles/main.css': [
+            '.tmp/styles/main.css'
+          ]
+        }
+      }
+    },
     // uglify: {
     //   dist: {
     //     files: {
