@@ -1,3 +1,16 @@
+##install
+
+Node and grunt are required.
+
+`npm install -g grunt-cli`
+
+`npm install` will install most dependencies. Some have to be installed manually:
+`npm install karma`
+`npm install phantomjs-prebuilt`
+`npm install jasmine-core`
+
+
+
 ## Build & development
 
 Run `grunt` for building and `grunt serve:dist` for full preview.
