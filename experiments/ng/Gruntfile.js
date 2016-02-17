@@ -62,6 +62,12 @@ module.exports = function (grunt) {
           open: true,
           base: 'dist'
         }
+      },
+      dev: {
+        options: {
+          open: true,
+          base: 'app'
+        }
       }
     },
 
@@ -314,7 +320,9 @@ module.exports = function (grunt) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
-
+    if (target === 'dev') {
+      return grunt.task.run(['connect:dev:keepalive']);
+    }
     grunt.task.run([
       'clean:server',
       'concurrent:server',
