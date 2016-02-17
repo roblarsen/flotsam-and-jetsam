@@ -15,27 +15,22 @@ module.exports = function (grunt) {
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
-    ngtemplates: 'grunt-angular-templates'
+    ngtemplates: 'grunt-angular-templates',
+    sass:'grunt-sass'
   });
 
   grunt.initConfig({
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      js: {
-        files: ['app/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all', 'newer:jscs:all']
-      },
-      jsTest: {
-        files: ['test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'newer:jscs:test', 'karma']
-      },
-      styles: {
-        files: ['app/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'postcss']
+      sass: {
+        files: ['app/styles/scss/**'],
+        tasks: ['sass']
+
       },
       gruntfile: {
-        files: ['Gruntfile.js']
+        files: ['Gruntfile.js'],
+        tasks: ['sass']
       }
     },
     // The actual grunt server settings
@@ -70,7 +65,16 @@ module.exports = function (grunt) {
         }
       }
     },
-
+    sass: {
+        options: {
+            sourceMap: true
+        },
+        dist: {
+            files: {
+                'app/styles/styles.css': 'app/styles/scss/styles.scss'
+            }
+        }
+    },
     // Make sure there are no obvious mistakes
     jshint: {
       options: {
