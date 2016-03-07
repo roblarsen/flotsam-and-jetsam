@@ -1,0 +1,29 @@
+@media (min-width:992px)
+{
+  #wsi-ff{
+
+      .navbar-toggle {
+          display: none;
+      }
+      .navbar-collapse.collapse {
+          display: block !important;
+      }
+      
+      .navbar-left{
+        position:absolute;
+        width:300px;
+        left:0px;
+        top:0;
+        bottom:0;
+        transition:left 1s;
+        .navbar-nav {
+          float:none !important;
+          > li{
+            float:none !important;
+            width:100%;
+          }
+        }
+        
+      } 
+    }
+  }

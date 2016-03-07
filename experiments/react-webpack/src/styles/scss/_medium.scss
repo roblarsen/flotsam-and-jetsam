@@ -1,0 +1,49 @@
+@media (min-width:768px) 
+{
+  #wsi-ff{
+      .navbar-header {
+          float: none;
+      }
+
+      .navbar-toggle {
+          display: block;
+      }
+
+      .navbar-collapse.collapse {
+          display: none !important;
+      }  
+      .navbar-collapse.collapse.in {
+          display: block !important;
+      }  
+      .navbar-left{
+        position:absolute;
+        width:300px;
+        left:-300px;
+        top:65px;
+        bottom:0;
+        transition:left 1s;
+        .navbar-nav {
+          float:none !important;
+          > li{
+            float:none !important;
+            width:100%;
+          }
+        }
+        
+      }
+      .navbar-left.in {
+        left:0;
+      }
+  }
+}
+@media (min-width:768px) and (max-width:992px)
+{
+  #wsi-ff{
+    .navbar.navbar-default{
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:1
+    }
+  }
+}

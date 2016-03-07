@@ -1,0 +1,7 @@
+{
+  "generator-react-webpack": {
+    "appName": "fieldAndFacilities",
+    "style": "scss",
+    "postcss": true
+  }
+}

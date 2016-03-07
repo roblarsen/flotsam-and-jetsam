@@ -1,0 +1,488 @@
+
+body {
+  background:$low-bg;
+  color:$lightest-grey;
+}
+
+.btn-default {
+  text-shadow: none;
+  background-image: none;
+  filter: none;
+  background-color:$night-crawler;
+  color:$light-blue; 
+  border:none; 
+}
+.btn {
+  border:none;
+}
+.btn-default:hover,
+.btn-default:focus {
+  background-color:$night-crawler;
+  color:$light-blue;  
+  background-position: 0;
+}
+.btn-default:active, 
+.btn-default.active, 
+.open > .dropdown-toggle.btn-default {
+  background-color:$night-crawler;
+  color:$light-blue;  
+}
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+  background-color:$night-crawler;
+  color:$light-blue;  
+}
+.btn-default:active:hover, 
+.btn-default.active:hover, 
+.open > .dropdown-toggle.btn-default:hover, 
+.btn-default:active:focus, 
+.btn-default.active:focus, 
+.open > .dropdown-toggle.btn-default:focus, 
+.btn-default:active.focus, 
+.btn-default.active.focus, 
+.open > .dropdown-toggle.btn-default.focus {
+    background-color:$night-crawler;
+    color:$light-blue;  
+    border:none;
+}
+.btn-primary {
+  background-image: none;
+  filter: none;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color:$night-crawler;
+  color:$light-blue;  
+}
+.btn-primary:active,
+.btn-primary.active {
+  background-color:$night-crawler;
+  color:$light-blue;  
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #265a88;
+  background-image: none;
+}
+.btn-success {
+  background-image: none;
+  filter: none;
+
+}
+.btn-success:hover,
+.btn-success:focus {
+  background-color:$night-crawler;
+  color:$light-blue;  
+}
+.btn-success:active,
+.btn-success.active {
+  background-color:$night-crawler;
+  color:$light-blue;  
+}
+.btn-success.disabled,
+.btn-success[disabled],
+fieldset[disabled] .btn-success,
+.btn-success.disabled:hover,
+.btn-success[disabled]:hover,
+fieldset[disabled] .btn-success:hover,
+.btn-success.disabled:focus,
+.btn-success[disabled]:focus,
+fieldset[disabled] .btn-success:focus,
+.btn-success.disabled.focus,
+.btn-success[disabled].focus,
+fieldset[disabled] .btn-success.focus,
+.btn-success.disabled:active,
+.btn-success[disabled]:active,
+fieldset[disabled] .btn-success:active,
+.btn-success.disabled.active,
+.btn-success[disabled].active,
+fieldset[disabled] .btn-success.active {
+  background-color:$night-crawler;
+  color:$light-blue;  
+}
+.btn-info {
+  background-image: none;
+  filter: none;
+  background-repeat: repeat-x;
+  border-color: #28a4c9;
+}
+.btn-info:hover,
+.btn-info:focus {
+  background-color:$night-crawler;
+  color:$light-blue;  
+}
+.btn-info:active,
+.btn-info.active {
+  background-color:$night-crawler;
+  color:$light-blue;  
+}
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled.focus,
+.btn-info[disabled].focus,
+fieldset[disabled] .btn-info.focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
+  background-color:$night-crawler;
+  color:$light-blue;  
+}
+.btn-warning {
+  background-image: none;
+  filter: none;
+  background-repeat: repeat-x;
+  border-color: #e38d13;
+}
+.btn-warning:hover,
+.btn-warning:focus {
+  background-color:$night-crawler;
+  color:$light-blue;  
+}
+.btn-warning:active,
+.btn-warning.active {
+  background-color:$night-crawler;
+  color:$light-blue;  
+}
+.btn-warning.disabled,
+.btn-warning[disabled],
+fieldset[disabled] .btn-warning,
+.btn-warning.disabled:hover,
+.btn-warning[disabled]:hover,
+fieldset[disabled] .btn-warning:hover,
+.btn-warning.disabled:focus,
+.btn-warning[disabled]:focus,
+fieldset[disabled] .btn-warning:focus,
+.btn-warning.disabled.focus,
+.btn-warning[disabled].focus,
+fieldset[disabled] .btn-warning.focus,
+.btn-warning.disabled:active,
+.btn-warning[disabled]:active,
+fieldset[disabled] .btn-warning:active,
+.btn-warning.disabled.active,
+.btn-warning[disabled].active,
+fieldset[disabled] .btn-warning.active {
+  background-color: #eb9316;
+  background-image: none;
+}
+.btn-danger {
+  background-image:none;
+  filter: none;}
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color:$night-crawler;
+  color:$light-blue; 
+}
+.btn-danger:active,
+.btn-danger.active {
+  background-color:$night-crawler;
+  color:$light-blue; 
+}
+.btn-danger.disabled,
+.btn-danger[disabled],
+fieldset[disabled] .btn-danger,
+.btn-danger.disabled:hover,
+.btn-danger[disabled]:hover,
+fieldset[disabled] .btn-danger:hover,
+.btn-danger.disabled:focus,
+.btn-danger[disabled]:focus,
+fieldset[disabled] .btn-danger:focus,
+.btn-danger.disabled.focus,
+.btn-danger[disabled].focus,
+fieldset[disabled] .btn-danger.focus,
+.btn-danger.disabled:active,
+.btn-danger[disabled]:active,
+fieldset[disabled] .btn-danger:active,
+.btn-danger.disabled.active,
+.btn-danger[disabled].active,
+fieldset[disabled] .btn-danger.active {
+  background-color:$night-crawler;
+  color:$light-blue; 
+}
+.thumbnail,
+.img-thumbnail {
+          box-shadow: none;
+}
+.dropdown-menu {
+  background-image:none;
+  filter: none;
+  background-color:$jean-grey;
+  > li > a {
+    color:$white; 
+  }
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-image:none;
+  filter: none;
+  background-color:$night-crawler;
+  color:$light-blue; 
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  background-image:none;
+  filter: none;
+  background-color:$night-crawler;
+  color:$light-blue; 
+}
+.navbar-default {
+  background-image:none;
+  filter: none;
+  background-color:$night-crawler;
+  color:$light-blue; 
+  border-radius:0;
+  border:none;
+  box-shadow: none;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .active > a {
+  background-image:none;
+  filter: none;
+  background-color:$night-crawler;
+  color:$light-blue; 
+  border-radius:0;
+  box-shadow: none;
+}
+.navbar-brand,
+.navbar-nav > li > a {
+  text-shadow: 0;
+}
+.navbar-inverse {
+  background-image:none;
+  filter: none;
+  background-color:$night-crawler;
+  color:$light-blue; 
+  border-radius:0;
+}
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .active > a {
+  background-image:none;
+  filter: none;
+  background-color:$night-crawler;
+  color:$light-blue; 
+  border-radius:0;
+  box-shadow: none;
+}
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a {
+  text-shadow: 0;
+}
+.navbar-static-top,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  border-radius: 0;
+}
+@media (max-width: 767px) {
+  .navbar .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: $lightest-grey;
+    background-image: none;
+    filter: none;
+    background-repeat: repeat-x;
+  }
+}
+.alert {
+  text-shadow: 0;
+  box-shadow: none;
+}
+.alert-success {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.alert-info {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.alert-warning {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.alert-danger {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.progress {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.progress-bar {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.progress-bar-success {  
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.progress-bar-info {
+    background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.progress-bar-warning {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.progress-bar-danger {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.progress-bar-striped {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+}
+.list-group {
+  border-radius: 0px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+}
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+  text-shadow: 0 -1px 0 #286090;
+  background-image: -webkit-linear-gradient(top, #337ab7 0%, #2b669a 100%);
+  background-image:      -o-linear-gradient(top, #337ab7 0%, #2b669a 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#337ab7), to(#2b669a));
+  background-image:         linear-gradient(to bottom, #337ab7 0%, #2b669a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2b669a', GradientType=0);
+  background-repeat: repeat-x;
+  border-color: #2b669a;
+}
+.list-group-item.active .badge,
+.list-group-item.active:hover .badge,
+.list-group-item.active:focus .badge {
+  text-shadow: none;
+}
+.panel {
+  box-shadow: 0;
+}
+.panel-default > .panel-heading {
+    background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.panel-primary > .panel-heading {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.panel-success > .panel-heading {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.panel-info > .panel-heading {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.panel-warning > .panel-heading {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.panel-danger > .panel-heading {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+.well {
+  background-image:none;
+  filter: none;
+  background-color:$storm;
+  color:$light-blue; 
+  border: none;
+}
+
+.form-field {
+  input, button, select, textarea {
+    background:$jean-grey;
+    border:none;
+  }
+}
+
